@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/*global*/
+body,
+html {
+    height:100%;
+    background-color:#f8f9fa!important;
+    font-family: 'Josefin Slab', serif;
+}
+a.nav-link {
+    font-size:20px;
+}
+
+
+

@@ -1,0 +1,16 @@
+.profile {
+    background-color: rgba(188, 188, 188, 0.5);
+    padding: 15px;
+}
+.profile p {
+    font-size: 21px;
+}
+.profile p.company {
+    font-size: 16px;
+}
+.profile h4.jobType {
+    margin-bottom: 0;
+}
+.profile h3 {
+    font-size: 20px;
+}
