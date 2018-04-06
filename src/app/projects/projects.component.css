@@ -1,0 +1,72 @@
+a.project-link {
+    color:#333;
+    display: block;
+    border: 1px dashed rgba(188, 188, 188, 0.5);
+    max-height:320px;
+    min-height:320px;
+    margin-bottom: 40px;
+}
+a.project-link:hover {
+    color:#333;
+    background-color:#FFF;
+    text-decoration:none;
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0, 0.25);
+    box-shadow: 0 2px 10px rgba(0,0,0, 0.25);
+}
+a.project-link .tile .content {
+    padding: 0 10px 0;
+    height:100px;   
+}
+a.project-link:hover .tile .content {
+    padding: 0 10px 0;
+    height:275px;
+}
+
+a.project-link h2 {
+    margin:20px 0;
+}
+a.project-link p{
+    display: none;
+}
+a.project-link:hover p{
+    display: block;
+}
+a.project-link button{
+    display: none;
+}
+a.project-link:hover button{
+    display: block;
+}
+a.project-link .img {
+    background-position:center center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    height:175px;
+    -webkit-transition: all 0.2s ease; 
+    -moz-transition: all 0.2s ease; 
+    -ms-transition: all 0.2s ease; 
+    -o-transition: all 0.2s ease; 
+    transition: all 0.2s ease;  
+}
+a.project-link:hover .img {
+    height: 70px;
+}
+a.project-link .img.psecalc {
+    background-image:url("/assets/img/psecalculator.JPG");
+}
+a.project-link .img.lcaLanding_A {
+    background-image:url("assets/img/smartMoney.JPG");
+}
+a.project-link .img.divenb {
+    background-image:url("assets/img/divenboard.JPG");
+}
+a.project-link .img.msm {
+    background-image:url("assets/img/mugshotmanila.JPG");
+}
+a.project-link .img.japorms {
+    background-image:url("assets/img/japorms.JPG");
+}
+
+
+
+

@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule,RouterLinkActive } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -46,7 +47,9 @@ import { CommonService } from './common.service';
       },
       { path: '**', component: NotFoundComponent }
     ]),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]
