@@ -12,6 +12,7 @@ import { fadeInAnimation } from '../router.animations';
 export class ContactComponent implements OnInit {
 
   showContactResponse:boolean = false;
+  isSendingInquiry:boolean = false;
 
   contactForm: FormGroup;
 
@@ -25,15 +26,18 @@ export class ContactComponent implements OnInit {
   }
   closeContactResponse() {
     this.showContactResponse = false;
+    this.isSendingInquiry=false;
   }
   sendInquiry() {
+    this.isSendingInquiry=true;
     let today = new Date();
     let dateStamp = today.toLocaleString("en-US");
-    if (this.contactForm.valid) {
-      console.log(this.contactForm.controls.fullName.value);
+
+    
+
+    if (this.contactForm.valid) {    
       let params = "?dateInquire=" + dateStamp + "&fullName=" + this.contactForm.controls.fullName.value + "&contactNumber=" + this.contactForm.controls.contactNumber.value + "&message=" + this.contactForm.controls.message.value;
-      console.log("Form Submitted!");
-      this.contactForm.reset();
+
       this.http.get(
         'https://script.google.com/macros/s/AKfycbyjql79VZf55cvnTGNld7nFDrLuSlj6XIq3JCKGLUnlvZwe_jU/exec' + params,{}
       )
@@ -46,6 +50,10 @@ export class ContactComponent implements OnInit {
           console.log("Error occured");
         }
         );
+
+        
+        this.contactForm.reset();
+        
 
     }
   }

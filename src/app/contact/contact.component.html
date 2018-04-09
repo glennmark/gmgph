@@ -19,7 +19,9 @@
           <label>Contact Number:</label>
           <input class="form-control" type="text" placeholder="Contact Number" [formControl]="contactForm.controls['contactNumber']">
           <div *ngIf="contactForm.controls['contactNumber'].hasError('required') && contactForm.controls['contactNumber'].touched"
-            class="alert alert-danger">Please fill up your contact number.</div>
+          class="alert alert-danger">Please fill up your contact number.</div>
+          <div *ngIf="contactForm.controls['contactNumber'].hasError('minlength') && contactForm.controls['contactNumber'].touched" class="alert alert-danger">Your contact number must be valid.</div>
+          <div *ngIf="contactForm.controls['contactNumber'].hasError('maxlength') && contactForm.controls['contactNumber'].touched" class="alert alert-danger">Your contact number has exceeded the maximum allowed value.</div>
         </div>
         <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['message'].valid && contactForm.controls['message'].touched}">
           <label>Message:</label>
@@ -29,7 +31,8 @@
         </div>
 
         <div class="form-group">
-          <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Submit</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid"><span *ngIf="!isSendingInquiry">Send</span>
+            <span *ngIf="isSendingInquiry">Sending...&nbsp;<i class="fa fa-circle-o-notch fa-spin"></i></span></button>
         </div>
       </form>
     </div>
