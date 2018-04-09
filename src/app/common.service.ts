@@ -9,5 +9,6 @@ export class CommonService {
   getChuckNorrisWordsOfWisdom() {
     return this.http.get('https://api.chucknorris.io/jokes/random');
   }
+  
 
 }

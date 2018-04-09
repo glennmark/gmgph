@@ -1,8 +1,14 @@
+<div class="contactResponse" [hidden]="!showContactResponse" (click)="closeContactResponse()">
+  <div class="overlay-content">
+    <i class="fa fa-times" style="cursor: pointer; text-align:right;display:block;" (click)="closeContactResponse()">&nbsp;</i>
+    <h1>Thank you for your inquiry. I'll get back to you real quick!</h1>
+  </div>
+</div>
 <div class="contact">
   <div class="row">
     <div class="col-lg-12">
 
-      <form [formGroup]="contactForm" (ngSubmit)="submitForm(contactForm.value)" class="ct-form">
+      <form [formGroup]="contactForm" (ngSubmit)="sendInquiry()" class="ct-form">
         <!-- We add an additional check to see if the user has at least clicked on the form field before displaying the error -->
         <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['fullName'].valid && contactForm.controls['fullName'].touched}">
           <label>Full Name:</label>
@@ -12,7 +18,8 @@
         <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['contactNumber'].valid && contactForm.controls['contactNumber'].touched}">
           <label>Contact Number:</label>
           <input class="form-control" type="text" placeholder="Contact Number" [formControl]="contactForm.controls['contactNumber']">
-          <div *ngIf="contactForm.controls['contactNumber'].hasError('required') && contactForm.controls['contactNumber'].touched" class="alert alert-danger">Please fill up your contact number.</div>
+          <div *ngIf="contactForm.controls['contactNumber'].hasError('required') && contactForm.controls['contactNumber'].touched"
+            class="alert alert-danger">Please fill up your contact number.</div>
         </div>
         <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['message'].valid && contactForm.controls['message'].touched}">
           <label>Message:</label>

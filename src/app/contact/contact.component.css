@@ -1,4 +1,10 @@
 .contact {
     padding:20px 10px;
     background-color:rgba(188, 188, 188, 0.5);
+    min-width:300px;
+    max-width:300px;
+}
+.contact .alert-danger {
+    padding: 5px;
+    margin-top: 5px;
 }

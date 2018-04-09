@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit,OnDestroy,OnChanges {
   ngOnInit() {
     this.intervalQuotation = setInterval(() =>{
       this.quote.class="animated fadeOutDown";
-      //this.getCN();
+      this.getCN();
       setTimeout(() => {
         if(this.CNQuote == undefined) {
           this.CNQuote = "im trying to load some Chuck Norris facts." 
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit,OnDestroy,OnChanges {
         this.quote.class="animated fadeInUp";
         
       },1200)
-    },15000)
+    },10000)
     
 
 
