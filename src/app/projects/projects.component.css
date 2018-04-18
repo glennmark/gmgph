@@ -51,6 +51,9 @@ a.project-link .img {
 a.project-link:hover .img {
     height: 70px;
 }
+a.project-link .img.ppatc {
+    background-image:url("/assets/img/ppatc.JPG");
+}
 a.project-link .img.psecalc {
     background-image:url("/assets/img/psecalculator.JPG");
 }
